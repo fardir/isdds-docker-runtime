@@ -1,0 +1,18 @@
+# using pytorch image
+docker run -it --rm --gpus all -p 8888:8888 -v '/media/f/Data/project-isdds':'/workspace' pytorch/pytorch:1.12.0-cuda11.3-cudnn8-runtime
+
+docker run -it --rm --gpus all -p 8888:8888 -v '/media/f/Data/project-isdds':'/workspace' pytorch-docker/pytorch-gpu-jupyter
+
+
+# using NVIDIA image
+docker run -it --rm --gpus all -p 8888:8888 -v '/media/f/Data/project-isdds':'/workspace' nvcr.io/nvidia/pytorch:22.06-py3
+
+docker run -it --rm --gpus all -p 8888:8888 -v '/media/f/Data/project-isdds':'/workspace' nvidia-docker/pytorch-gpu-jupyter
+
+
+
+# exec inside running container
+docker exec -it python_notebook bash
+
+
+docker run -it --rm --gpus all -p 8888:8888 -v '/media/f/Data/project-isdds':'/workspace' pytorch-docker_notebook:latest --ipc=host --allow-root --ip=0.0.0.0
